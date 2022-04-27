@@ -1,0 +1,24 @@
+<div class="container">
+    <a href="create" mat-raised-button color="primary" style="width: 150px; height: 50px; margin: 30px;">Crear Personaje</a>
+    <mat-card class="example-card" *ngFor="let personaje of personajes.results" style="margin-top:12px;">
+
+        <div style="display: flex;">
+            <mat-card-header>
+                <img src="{{personaje.image}}" alt="">
+            </mat-card-header>
+            <mat-card-content style="margin: 50px; width: 400px;">
+                <div><h1>{{personaje.id}}</h1></div>
+                <div><h2>{{personaje.name}}</h2></div>
+                <div><h3>{{personaje.status}}</h3></div>
+                
+            </mat-card-content>
+            <div style="margin-left: 160px;">
+                <div style="margin: 50px;"><button mat-raised-button color="primary" style="width: 150px; height: 50px;">Editar</button></div>
+                <div style="margin: 50px;">
+                    <button mat-fab color="accent" aria-label="Example icon button with a delete icon" style="margin: auto;" (click)="deletePersonaje(personaje)">
+                    <mat-icon>delete</mat-icon>
+                </button></div>   
+            </div>
+        </div>
+    </mat-card>
+</div>
